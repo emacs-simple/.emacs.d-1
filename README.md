@@ -87,7 +87,7 @@ Recommend to use [Centaur Dotfiles](https://github.com/seagle0128/dotfiles).
 
 ``` shell
 mv ~/.emacs.d ~/.emacs.d.bak
-git clone --depth 1 https://github.com/seagle0128/.emacs.d.git ~/.emacs.d
+git clone --depth 1 https://github.com/emacs-simple/.emacs.d-1.git ~/.emacs.d
 ```
 
 or download the [zip
