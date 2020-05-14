@@ -166,5 +166,5 @@ decrease this. If you experience stuttering, increase this.")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
-(load-library "mylocal/org-graph-view")
+(load-library "~/.emacs.d/mylocal/org-graph-view/org-graph-view")
 (require 'org-graph-view)
