@@ -166,3 +166,5 @@ decrease this. If you experience stuttering, increase this.")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
+(load-library "local/org-graph-view")
+(require 'org-graph-view)
