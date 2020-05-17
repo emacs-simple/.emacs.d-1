@@ -204,3 +204,22 @@ decrease this. If you experience stuttering, increase this.")
   (save-buffer)
   (kill-buffer))
 
+(with-current-buffer (find-file "~/.emacs.d/todo.org")
+  (org-agenda-file-to-front)
+  (save-buffer)
+  (kill-buffer))
+
+(setq org-default-notes-file "~/.emacs.d/todo.org")
+
+(setq org-capture-templates '(("t" "Todo" entry (file+headline "~/.emacs.d/todo.org" "Tareas")
+                               "* TODO %?\n  %i\n  %a")))
+
+(define-key global-map "\C-cc" 'org-capture)
+
+(defun guarda-todo nil
+  (interactive)
+  (org-capture t "t"))
+
+(defun todo nil
+  (interactive)
+  (call-interactively (quote org-todo-list)))
