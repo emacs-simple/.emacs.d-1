@@ -168,3 +168,39 @@ decrease this. If you experience stuttering, increase this.")
 ;;; init.el ends here
 (load-library "~/.emacs.d/mylocal/org-graph-view/org-graph-view")
 (require 'org-graph-view)
+
+
+(unless (package-installed-p 'elisp-format)
+  (package-install 'elisp-format))
+(require 'elisp-format)
+
+
+
+(defmacro write-alias (f-name var)
+  ``(defun ,(make-symbol ,f-name) ()
+      (interactive)
+      (call-interactively ',,var)))
+
+;;(inc "s" last-command)
+
+;;(make-symbol "s")
+
+(defun to-string (x)
+  (format "%s" x))
+
+(defun recuerda (s)
+  (interactive "sFunction name:")
+  (with-current-buffer (find-file "~/.emacs.d/funciones.el")
+    (newline)
+    (insert (to-string (write-alias s last-command)))
+    (newline)
+    (elisp-format-buffer)
+    (eval-buffer)
+    (save-buffer)
+    (kill-buffer)))
+
+(with-current-buffer (find-file "~/.emacs.d/funciones.el")
+  (eval-buffer)
+  (save-buffer)
+  (kill-buffer))
+
